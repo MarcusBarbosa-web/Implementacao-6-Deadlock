@@ -1,0 +1,51 @@
+Script started on 2026-11-14 16:47:49-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="148" LINES="35"]
+[?2004h]0;marcus@Antonio: ~/Implementação-6-Deadlock[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock[00m$ date
+[?2004lSat Nov 14 16:48:12 -03 2026
+[?2004h]0;marcus@Antonio: ~/Implementação-6-Deadlock[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock[00m$ whoami
+[?2004lmarcus
+[?2004h]0;marcus@Antonio: ~/Implementação-6-Deadlock[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock[00m$ pwd
+[?2004l/home/marcus/Implementação-6-Deadlock
+[?2004h]0;marcus@Antonio: ~/Implementação-6-Deadlock[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock[00m$ [7m./banker 10 5 7[27m./banker 10 5 7
+[?2004lbash: ./banker: No such file or directory
+[?2004h]0;marcus@Antonio: ~/Implementação-6-Deadlock[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock[00m$ ./banker 10 5 7[C[1P[1P[1P[1P[1P[1P[1@c[1@o[1@d[1@i[1@g[1@o[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kls
+[?2004lMakefile  README.md  codigo.c  commands.txt  customer.txt  evidencias.log  result.txt
+[?2004h]0;marcus@Antonio: ~/Implementação-6-Deadlock[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock[00m$ ls./banker 10 5 7[1P[1P[1P[1P[1P[1P[1@c[1@o[1@d[1@g[1@o[1P[1P[1@i[1@g[1@o
+[?2004lbash: ./codigo: No such file or directory
+[?2004h]0;marcus@Antonio: ~/Implementação-6-Deadlock[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock[00m$ [7mgcc -Wall -Wextra -o codigo codigo.c[27mgcc -Wall -Wextra -o codigo codigo.c
+[?2004l[01m[Kcodigo.c:[m[K In function ‘[01m[Kler_txt_customer[m[K’:
+[01m[Kcodigo.c:45:49:[m[K [01;35m[Kwarning: [m[Ksuggest parentheses around ‘[01m[K&&[m[K’ within ‘[01m[K||[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wparentheses-Wparentheses]8;;[m[K]
+   45 |         if(linha[0] != '\n' || [01;35m[Klinha[0] != '\r' && linha[0] != '\0'[m[K){
+      |                                [01;35m[K~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~[m[K
+[01m[Kcodigo.c:67:36:[m[K [01;35m[Kwarning: [m[Kcast to pointer from integer of different size [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-to-pointer-cast-Wint-to-pointer-cast]8;;[m[K]
+   67 |         dados->maximum[i] = malloc([01;35m[K([m[Kint*)dados->n_recursos * sizeof(int));
+      |                                    [01;35m[K^[m[K
+[01m[Kcodigo.c:67:60:[m[K [01;31m[Kerror: [m[Kinvalid operands to binary * (have ‘[01m[Kint *[m[K’ and ‘[01m[Klong unsigned int[m[K’)
+   67 |         dados->maximum[i] = malloc([32m[K(int*)dados->n_recursos[m[K [01;31m[K*[m[K sizeof(int));
+      |                                    [32m[K~~~~~~~~~~~~~~~~~~~~~~~[m[K [01;31m[K^[m[K
+      |                                    [32m[K|[m[K
+      |                                    [32m[Kint *[m[K
+[01m[Kcodigo.c:103:13:[m[K [01;31m[Kerror: [m[Klabel ‘[01m[Kformato_invalido[m[K’ used but not defined
+  103 |             [01;31m[Kgoto[m[K formato_invalido;
+      |             [01;31m[K^~~~[m[K
+[01m[Kcodigo.c:71:13:[m[K [01;31m[Kerror: [m[Klabel ‘[01m[Klimpar[m[K’ used but not defined
+   71 |             [01;31m[Kgoto[m[K limpar;
+      |             [01;31m[K^~~~[m[K
+[?2004h]0;marcus@Antonio: ~/Implementação-6-Deadlock[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock[00m$ gcc -Wall -Wextra -o codigo codigo.c
+[?2004l[01m[Kcodigo.c:[m[K In function ‘[01m[Kler_txt_customer[m[K’:
+[01m[Kcodigo.c:103:13:[m[K [01;31m[Kerror: [m[Klabel ‘[01m[Kformato_invalido[m[K’ used but not defined
+  103 |             [01;31m[Kgoto[m[K formato_invalido;
+      |             [01;31m[K^~~~[m[K
+[01m[Kcodigo.c:71:13:[m[K [01;31m[Kerror: [m[Klabel ‘[01m[Klimpar[m[K’ used but not defined
+   71 |             [01;31m[Kgoto[m[K limpar;
+      |             [01;31m[K^~~~[m[K
+[?2004h]0;marcus@Antonio: ~/Implementação-6-Deadlock[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock[00m$ gcc -Wall -Wextra -o codigo codigo.c
+[?2004l[?2004h]0;marcus@Antonio: ~/Implementação-6-Deadlock[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock[00m$ gcc -Wall -Wextra -o codigo codigo.c[21P./codigo 10 5 7
+[?2004l7 5 3 
+3 2 2 
+9 0 2 
+2 2 2 
+4 3 3 
+[?2004h]0;marcus@Antonio: ~/Implementação-6-Deadlock[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock[00m$ exit
+[?2004lexit
+
+Script done on 2026-11-14 16:55:57-03:00 [COMMAND_EXIT_CODE="0"]
