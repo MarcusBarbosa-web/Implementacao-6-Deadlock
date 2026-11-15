@@ -1,11 +1,9 @@
 # Algoritmo do Banqueiro (Banker's Algorithm)
 
-Implementação 5 da disciplina de Infraestrutura de Software (Cesar School).
-Programa em C que simula o algoritmo do banqueiro para evitar deadlock, conforme
-o livro *Operating System Concepts* (Silberschatz et al., 10ª edição, p. P-45),
-com o número de clientes e de recursos definido pela entrada.
+Implementação 6.
+Programa em C que simula o algoritmo do banqueiro para evitar deadlock, de acordo com o livro *Operating System Concepts*, com o número de clientes e de recursos definido pela entrada.
 
-**Autor:** Marcus Barbosa (mvpb@cesar.school)
+**Autor:** Marcus Vinícius Pereira Barbosa (mvpb@cesar.school)
 
 ## Estrutura do repositório
 
@@ -16,14 +14,6 @@ com o número de clientes e de recursos definido pela entrada.
 | `evidencias.log` | Evidências de execução e testes |
 | `README.md` | Este arquivo |
 | Relatório (PDF) | Relatório da implementação |
-
-Os arquivos `customer.txt`, `commands.txt` e `result.txt` de exemplo foram
-fornecidos pelo professor e não fazem parte da entrega.
-
-## Requisitos
-
-- Linux, Unix ou macOS
-- `gcc` e `make`
 
 ## Compilação
 
@@ -39,23 +29,17 @@ make clean
 
 ## Execução
 
-Cada argumento é o número total de instâncias de um tipo de recurso:
-
 ```bash
 ./banker 10 5 7
 ```
 
-O exemplo acima cria 3 tipos de recursos, com 10, 5 e 7 instâncias.
-O programa precisa de `customer.txt` e `commands.txt` na pasta em que for executado
-e gera `result.txt` nessa mesma pasta.
+O exemplo acima cria 3 tipos de recursos, com 10, 5 e 7 instâncias. O programa precisa de `customer.txt` e `commands.txt` na pasta em que for executado e gera `result.txt` nessa mesma pasta.
 
 ## Arquivos de entrada
 
 ### customer.txt
 
-Cada linha é um cliente, e cada número é o máximo (MAXIMUM) que ele pode pedir
-de cada recurso, separados por vírgula. O número de linhas define o número de
-clientes. Exemplo com 5 clientes e 3 recursos:
+Cada linha é um cliente, e cada número é o máximo (MAXIMUM) que ele pode pedir de cada recurso, separados por vírgula. O número de linhas define o número de clientes. Exemplo com 5 clientes e 3 recursos:
 
 ```
 7,5,3
@@ -81,17 +65,13 @@ Para cada `RQ`, o programa verifica, nesta ordem:
 
 1. Se o pedido excede o NEED do cliente, é negado (`exceed its maximum allocation`).
 2. Se o pedido excede o AVAILABLE, é negado (`are not enough`).
-3. Se o pedido deixaria o sistema em estado inseguro, o estado é restaurado e o
-   pedido é negado (`result in an unsafe state`). A segurança é verificada pelo
-   algoritmo de segurança do livro.
+3. Se o pedido deixaria o sistema em estado inseguro, o estado é restaurado e o pedido é negado (`result in an unsafe state`). A segurança é verificada pelo algoritmo de segurança do livro.
 
-Se passar nas três verificações, os recursos são alocados. Para cada `RL`, o
-programa verifica se o cliente tem os recursos que quer devolver e, em caso
-positivo, atualiza AVAILABLE, ALLOCATION e NEED.
+Se passar nas três verificações, os recursos são alocados. Para cada `RL`, o programa verifica se o cliente tem os recursos que quer devolver e, em caso positivo, atualiza AVAILABLE, ALLOCATION e NEED.
 
 ## Saída (result.txt)
 
-As mensagens seguem o formato do exemplo do professor:
+As mensagens seguem os mesmos formatos dos exemplos:
 
 ```
 Allocate to customer 0 the resources 0 2 1
@@ -102,31 +82,4 @@ The customer 2 request 0 1 0 was denied because exceed its maximum allocation
 ```
 
 O comando `*` escreve a tabela `MAXIMUM | ALLOCATION | NEED` seguida da linha `AVAILABLE`.
-
-## Tratamento de erros
-
-O programa não falha silenciosamente: mostra uma mensagem na saída de erro
-(`stderr`) e encerra liberando a memória alocada. Os casos tratados são:
-
-- Nenhum argumento informado, ou argumento que não seja um inteiro não negativo.
-- `customer.txt` ou `commands.txt` inexistente, impossível de abrir ou vazio (customer).
-- Linha de `customer.txt` com quantidade de colunas diferente do número de recursos,
-  ou com caracteres inválidos.
-- Linha de `commands.txt` com comando desconhecido, número de valores diferente do
-  número de recursos, valores negativos ou cliente inexistente.
-- Falha de alocação de memória.
-
-Os dois arquivos de entrada são totalmente validados **antes** de qualquer comando
-ser executado. Se houver erro, o `result.txt` não é criado nem alterado.
-
-## Decisões de projeto
-
-- As matrizes são alocadas dinamicamente (`int **`, um `malloc` por linha), já
-  que o número de clientes e de recursos só é conhecido na execução.
-- Se um cliente tentar liberar (`RL`) mais do que tem alocado, a liberação é negada
-  com a mensagem `The customer N release ... was denied because exceed its allocation`.
-  O enunciado não define esse caso, então o texto segue o padrão das demais mensagens.
-- No enunciado, o exemplo de saída mostra `3 2 2` na mensagem de recursos
-  insuficientes, mas o AVAILABLE naquele ponto é `3 3 2` (como mostram a tabela
-  anterior e o `result.txt` fornecido). O programa segue o `result.txt`.
   
