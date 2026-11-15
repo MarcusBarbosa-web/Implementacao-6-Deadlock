@@ -1,51 +1,349 @@
 Script started on 2026-11-14 16:47:49-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="148" LINES="35"]
-[?2004h]0;marcus@Antonio: ~/Implementação-6-Deadlock[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock[00m$ date
-[?2004lSat Nov 14 16:48:12 -03 2026
-[?2004h]0;marcus@Antonio: ~/Implementação-6-Deadlock[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock[00m$ whoami
-[?2004lmarcus
-[?2004h]0;marcus@Antonio: ~/Implementação-6-Deadlock[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock[00m$ pwd
-[?2004l/home/marcus/Implementação-6-Deadlock
-[?2004h]0;marcus@Antonio: ~/Implementação-6-Deadlock[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock[00m$ [7m./banker 10 5 7[27m./banker 10 5 7
-[?2004lbash: ./banker: No such file or directory
-[?2004h]0;marcus@Antonio: ~/Implementação-6-Deadlock[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock[00m$ ./banker 10 5 7[C[1P[1P[1P[1P[1P[1P[1@c[1@o[1@d[1@i[1@g[1@o[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kls
-[?2004lMakefile  README.md  codigo.c  commands.txt  customer.txt  evidencias.log  result.txt
-[?2004h]0;marcus@Antonio: ~/Implementação-6-Deadlock[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock[00m$ ls./banker 10 5 7[1P[1P[1P[1P[1P[1P[1@c[1@o[1@d[1@g[1@o[1P[1P[1@i[1@g[1@o
-[?2004lbash: ./codigo: No such file or directory
-[?2004h]0;marcus@Antonio: ~/Implementação-6-Deadlock[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock[00m$ [7mgcc -Wall -Wextra -o codigo codigo.c[27mgcc -Wall -Wextra -o codigo codigo.c
-[?2004l[01m[Kcodigo.c:[m[K In function ‘[01m[Kler_txt_customer[m[K’:
-[01m[Kcodigo.c:45:49:[m[K [01;35m[Kwarning: [m[Ksuggest parentheses around ‘[01m[K&&[m[K’ within ‘[01m[K||[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wparentheses-Wparentheses]8;;[m[K]
-   45 |         if(linha[0] != '\n' || [01;35m[Klinha[0] != '\r' && linha[0] != '\0'[m[K){
-      |                                [01;35m[K~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~[m[K
-[01m[Kcodigo.c:67:36:[m[K [01;35m[Kwarning: [m[Kcast to pointer from integer of different size [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-to-pointer-cast-Wint-to-pointer-cast]8;;[m[K]
-   67 |         dados->maximum[i] = malloc([01;35m[K([m[Kint*)dados->n_recursos * sizeof(int));
-      |                                    [01;35m[K^[m[K
-[01m[Kcodigo.c:67:60:[m[K [01;31m[Kerror: [m[Kinvalid operands to binary * (have ‘[01m[Kint *[m[K’ and ‘[01m[Klong unsigned int[m[K’)
-   67 |         dados->maximum[i] = malloc([32m[K(int*)dados->n_recursos[m[K [01;31m[K*[m[K sizeof(int));
-      |                                    [32m[K~~~~~~~~~~~~~~~~~~~~~~~[m[K [01;31m[K^[m[K
-      |                                    [32m[K|[m[K
-      |                                    [32m[Kint *[m[K
-[01m[Kcodigo.c:103:13:[m[K [01;31m[Kerror: [m[Klabel ‘[01m[Kformato_invalido[m[K’ used but not defined
-  103 |             [01;31m[Kgoto[m[K formato_invalido;
-      |             [01;31m[K^~~~[m[K
-[01m[Kcodigo.c:71:13:[m[K [01;31m[Kerror: [m[Klabel ‘[01m[Klimpar[m[K’ used but not defined
-   71 |             [01;31m[Kgoto[m[K limpar;
-      |             [01;31m[K^~~~[m[K
-[?2004h]0;marcus@Antonio: ~/Implementação-6-Deadlock[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock[00m$ gcc -Wall -Wextra -o codigo codigo.c
-[?2004l[01m[Kcodigo.c:[m[K In function ‘[01m[Kler_txt_customer[m[K’:
-[01m[Kcodigo.c:103:13:[m[K [01;31m[Kerror: [m[Klabel ‘[01m[Kformato_invalido[m[K’ used but not defined
-  103 |             [01;31m[Kgoto[m[K formato_invalido;
-      |             [01;31m[K^~~~[m[K
-[01m[Kcodigo.c:71:13:[m[K [01;31m[Kerror: [m[Klabel ‘[01m[Klimpar[m[K’ used but not defined
-   71 |             [01;31m[Kgoto[m[K limpar;
-      |             [01;31m[K^~~~[m[K
-[?2004h]0;marcus@Antonio: ~/Implementação-6-Deadlock[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock[00m$ gcc -Wall -Wextra -o codigo codigo.c
-[?2004l[?2004h]0;marcus@Antonio: ~/Implementação-6-Deadlock[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock[00m$ gcc -Wall -Wextra -o codigo codigo.c[21P./codigo 10 5 7
-[?2004l7 5 3 
+]0;marcus@Antonio: ~/Implementação-6-Deadlockmarcus@Antonio:~/Implementação-6-Deadlock$ date
+Sat Nov 14 16:48:12 -03 2026
+]0;marcus@Antonio: ~/Implementação-6-Deadlockmarcus@Antonio:~/Implementação-6-Deadlock$ whoami
+marcus
+]0;marcus@Antonio: ~/Implementação-6-Deadlockmarcus@Antonio:~/Implementação-6-Deadlock$ pwd
+/home/marcus/Implementação-6-Deadlock
+]0;marcus@Antonio: ~/Implementação-6-Deadlockmarcus@Antonio:~/Implementação-6-Deadlock$ ./banker 10 5 ./banker 10 5 7
+bash: ./banker: No such file or directory
+]0;marcus@Antonio: ~/Implementação-6-Deadlockmarcus@Antonio:~/Implementação-6-Deadlock$ ./banker 10 5 [1@c[1@o[1@d[1@i[1@g[1@ols
+Makefile  README.md  codigo.c  commands.txt  customer.txt  evidencias.log  result.txt
+]0;marcus@Antonio: ~/Implementação-6-Deadlockmarcus@Antonio:~/Implementação-6-Deadlock$ l./banker 10 5 [1@c[1@o[1@d[1@g[1@[1@i[1@g[1@o
+bash: ./codigo: No such file or directory
+]0;marcus@Antonio: ~/Implementação-6-Deadlockmarcus@Antonio:~/Implementação-6-Deadlock$ gcc -Wall -Wextra -o codigo codigo.gcc -Wall -Wextra -o codigo codigo.c
+codigo.c: In function ‘ler_txt_customer’:
+codigo.c:45:49: warning: suggest parentheses around ‘&&’ within ‘||’ []8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wparentheses-Wparentheses]8;;]
+   45 |         if(linha[0] != '\n' || linha[0] != '\r' && linha[0] != '\0'){
+      |                                ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+codigo.c:67:36: warning: cast to pointer from integer of different size []8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-to-pointer-cast-Wint-to-pointer-cast]8;;]
+   67 |         dados->maximum[i] = malloc((int*)dados->n_recursos * sizeof(int));
+      |                                    ^
+codigo.c:67:60: error: invalid operands to binary * (have ‘int *’ and ‘long unsigned int’)
+   67 |         dados->maximum[i] = malloc((int*)dados->n_recursos * sizeof(int));
+      |                                    ~~~~~~~~~~~~~~~~~~~~~~~ ^
+      |                                    |
+      |                                    int *
+codigo.c:103:13: error: label ‘formato_invalido’ used but not defined
+  103 |             goto formato_invalido;
+      |             ^~~~
+codigo.c:71:13: error: label ‘limpar’ used but not defined
+   71 |             goto limpar;
+      |             ^~~~
+]0;marcus@Antonio: ~/Implementação-6-Deadlockmarcus@Antonio:~/Implementação-6-Deadlock$ gcc -Wall -Wextra -o codigo codigo.c
+codigo.c: In function ‘ler_txt_customer’:
+codigo.c:103:13: error: label ‘formato_invalido’ used but not defined
+  103 |             goto formato_invalido;
+      |             ^~~~
+codigo.c:71:13: error: label ‘limpar’ used but not defined
+   71 |             goto limpar;
+      |             ^~~~
+]0;marcus@Antonio: ~/Implementação-6-Deadlockmarcus@Antonio:~/Implementação-6-Deadlock$ gcc -Wall -Wextra -o codigo codigo.c
+]0;marcus@Antonio: ~/Implementação-6-Deadlockmarcus@Antonio:~/Implementação-6-Deadlock$ gcc -Wall -Wextra -o codigo codigo../codigo 10 5 7
+7 5 3 
 3 2 2 
 9 0 2 
 2 2 2 
 4 3 3 
-[?2004h]0;marcus@Antonio: ~/Implementação-6-Deadlock[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock[00m$ exit
-[?2004lexit
+]0;marcus@Antonio: ~/Implementação-6-Deadlockmarcus@Antonio:~/Implementação-6-Deadlock$ exit
+exit
 
 Script done on 2026-11-14 16:55:57-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-14 17:49:53-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="148" LINES="35"]
+]0;marcus@Antonio: ~/Implementação-6-Deadlockmarcus@Antonio:~/Implementação-6-Deadlock$ exi./codigo 10 5 gcc -Wall -Wextra -o codigo codigo../codigo 10 5 7
+bash: ./codigo: No such file or directory
+]0;marcus@Antonio: ~/Implementação-6-Deadlockmarcus@Antonio:~/Implementação-6-Deadlock$ ./codigo 10 5 exi./codigo 10 5 gcc -Wall -Wextra -o codigo codigo.c
+codigo.c: In function ‘ler_txt_commands’:
+codigo.c:180:13: error: label ‘invalido’ used but not defined
+  180 |             goto invalido;
+      |             ^~~~
+]0;marcus@Antonio: ~/Implementação-6-Deadlockmarcus@Antonio:~/Implementação-6-Deadlock$ gcc -Wall -Wextra -o codigo codigo.c
+]0;marcus@Antonio: ~/Implementação-6-Deadlockmarcus@Antonio:~/Implementação-6-Deadlock$ gcc -Wall -Wextra -o codigo codigo../codigo 10 5 7
+7 5 3 
+3 2 2 
+9 0 2 
+2 2 2 
+4 3 3 
+]0;marcus@Antonio: ~/Implementação-6-Deadlockmarcus@Antonio:~/Implementação-6-Deadlock$ ./codigo 10 5 
+Formato invalido no arquivo customer.txt (cliente 0)
+]0;marcus@Antonio: ~/Implementação-6-Deadlockmarcus@Antonio:~/Implementação-6-Deadlock$ exit
+exit
+
+Script done on 2026-11-14 17:53:36-03:00 [COMMAND_EXIT_CODE="1"]
+Script started on 2026-11-14 21:17:47-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="148" LINES="35"]
+]0;marcus@Antonio: ~/Implementação-6-Deadlockmarcus@Antonio:~/Implementação-6-Deadlock$ exi./codigo 10 exiexi./codigo 10 5 gcc -Wall -Wextra -o codigo codigo../codigo 10 5 exi./codigo 10 5 exi./codigo 10 5 gcc -Wall -Wextra -o codigo codigo../codigo 10 5 eximake
+gcc -Wall -Wextra -g -o banker banker.c
+banker.c: In function ‘ler_argumentos’:
+banker.c:499:71: error: ‘INT_MAX’ undeclared (first use in this function)
+  499 |         if(fim == argv[j + 1] || *fim != '\0' || valor < 0 || valor > INT_MAX){
+      |                                                                       ^~~~~~~
+banker.c:4:1: note: ‘INT_MAX’ is defined in header ‘<limits.h>’; did you forget to ‘#include <limits.h>’?
+    3 | #include <string.h>
+  +++ |+#include <limits.h>
+    4 | 
+banker.c:499:71: note: each undeclared identifier is reported only once for each function it appears in
+  499 |         if(fim == argv[j + 1] || *fim != '\0' || valor < 0 || valor > INT_MAX){
+      |                                                                       ^~~~~~~
+banker.c: In function ‘main’:
+banker.c:541:5: error: ‘saida’ undeclared (first use in this function)
+  541 |     saida = fopen("result.txt", "w");
+      |     ^~~~~
+banker.c:518:12: warning: unused variable ‘j’ []8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;]
+  518 |     int i, j;
+      |            ^
+banker.c:518:9: warning: unused variable ‘i’ []8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;]
+  518 |     int i, j;
+      |         ^
+make: *** [Makefile:5: banker] Error 1
+]0;marcus@Antonio: ~/Implementação-6-Deadlockmarcus@Antonio:~/Implementação-6-Deadlock$ make
+gcc -Wall -Wextra -g -o banker banker.c
+]0;marcus@Antonio: ~/Implementação-6-Deadlockmarcus@Antonio:~/Implementação-6-Deadlock$ make
+gcc -Wall -Wextra -g -o banker banker.c
+]0;marcus@Antonio: ~/Implementação-6-Deadlockmarcus@Antonio:~/Implementação-6-Deadlock$ ./banker 10 5 ./banker 10 5 7
+]0;marcus@Antonio: ~/Implementação-6-Deadlockmarcus@Antonio:~/Implementação-6-Deadlock$ mkdir -p testes && cd testemkdir -p testes && cd testes
+]0;marcus@Antonio: ~/Implementação-6-Deadlock/testesmarcus@Antonio:~/Implementação-6-Deadlock/testes$ cp ../banker ../customer.txt ../commands.txt cp ../banker ../customer.txt ../commands.txt .
+]0;marcus@Antonio: ~/Implementação-6-Deadlock/testesmarcus@Antonio:~/Implementação-6-Deadlock/testes$ { echo "=== CENARIO 1: exemplo do enunciado ==="; ./banker 10 5 7; echo "codigo de saida: $?"; cat result.txt; } >> ../evidencias.log 2>&1
+diff result.txt ../result.txt && e=== CENARIO 1: exemplo do enunciado ===
+codigo de saida: 0
+Allocate to customer 0 the resources 0 2 1
+Allocate to customer 2 the resources 3 0 2
+Allocate to customer 1 the resources 2 0 0
+Allocate to customer 4 the resources 0 0 2
+Release from customer 0 the resources 0 1 1
+Allocate to customer 3 the resources 2 1 1
+MAXIMUM   |   ALLOCATION  |   NEED
+7 5 3     |   0 1 0       |   7 4 3 
+3 2 2     |   2 0 0       |   1 2 2 
+9 0 2     |   3 0 2       |   6 0 0 
+2 2 2     |   2 1 1       |   0 1 1 
+4 3 3     |   0 0 2       |   4 3 1 
+AVAILABLE 3 3 2 
+The resources 3 3 2 are not enough to customer 4 request 4 0 0
+Allocate to customer 1 the resources 1 0 2
+The customer 0 request 0 2 0 was denied because result in an unsafe state
+The customer 2 request 0 1 0 was denied because exceed its maximum allocation
+=== CENARIO 1: exemplo do enunciado ===
+codigo de saida: 0
+Allocate to customer 0 the resources 0 2 1
+Allocate to customer 2 the resources 3 0 2
+Allocate to customer 1 the resources 2 0 0
+Allocate to customer 4 the resources 0 0 2
+Release from customer 0 the resources 0 1 1
+Allocate to customer 3 the resources 2 1 1
+MAXIMUM   |   ALLOCATION  |   NEED
+7 5 3     |   0 1 0       |   7 4 3 
+3 2 2     |   2 0 0       |   1 2 2 
+9 0 2     |   3 0 2       |   6 0 0 
+2 2 2     |   2 1 1       |   0 1 1 
+4 3 3     |   0 0 2       |   4 3 1 
+AVAILABLE 3 3 2 
+The resources 3 3 2 are not enough to customer 4 request 4 0 0 
+Allocate to customer 1 the resources 1 0 2
+The customer 0 request 0 2 0 was denied because result in an unsafe state
+The customer 2 request 0 1 0 was denied because exceed its maximum allocation
+diff com result_esperado.txt: IGUAL
+=== CENARIO 2: liberacao maior que a alocacao ===
+codigo de saida: 0
+Allocate to customer 3 the resources 2 1 1
+The customer 3 release 5 0 0 was denied because exceed its allocation
+MAXIMUM   |   ALLOCATION  |   NEED
+7 5 3     |   0 0 0       |   7 5 3 
+3 2 2     |   0 0 0       |   3 2 2 
+9 0 2     |   0 0 0       |   9 0 2 
+2 2 2     |   2 1 1       |   0 1 1 
+4 3 3     |   0 0 0       |   4 3 3 
+AVAILABLE 8 4 6 
+cho IGUAL]0;marcus@Antonio: ~/Implementação-6-Deadlock/testesmarcus@Antonio:~/Implementação-6-Deadlock/testes$ { echo "=== CENARIO 1: exemplo do enunciado ==="; ./banker 10 5 7; echo "codigo de saida: $?"; cat result.txt; } >> ../evidencias.log 2>&1
+diff result.txt ../result.txt && echo IGUAL
+IGUAL
+]0;marcus@Antonio: ~/Implementação-6-Deadlock/testesmarcus@Antonio:~/Implementação-6-Deadlock/testes$ sed -n '14p' result_esperado.txt | cat -sed -n '14p' result_esperado.txt | cat -A
+sed: can't read result_esperado.txt: No such file or directory
+]0;marcus@Antonio: ~/Implementação-6-Deadlock/testesmarcus@Antonio:~/Implementação-6-Deadlock/testes$ cd -
+/home/marcus/Implementação-6-Deadlock
+]0;marcus@Antonio: ~/Implementação-6-Deadlockmarcus@Antonio:~/Implementação-6-Deadlock$ sed -n '14p' result_esperado.txt | cat -sed -n '14p' result_esperado.txt | cat -A
+The resources 3 3 2 are not enough to customer 4 request 4 0 0 $
+]0;marcus@Antonio: ~/Implementação-6-Deadlockmarcus@Antonio:~/Implementação-6-Deadlock$ make
+./banker 10 5 7
+diff result.txt result_esperado.txt && echo IGUAmake
+./banker 10 5 7
+diff result.txt result_esperado.txt && echo IGUAL
+gcc -Wall -Wextra -g -o banker banker.c
+IGUAL
+]0;marcus@Antonio: ~/Implementação-6-Deadlockmarcus@Antonio:~/Implementação-6-Deadlock$ cd testecd testes
+]0;marcus@Antonio: ~/Implementação-6-Deadlock/testesmarcus@Antonio:~/Implementação-6-Deadlock/testes$ cp ../banker ../customer.txt ../commands.txt cp ../banker ../customer.txt ../commands.txt .
+]0;marcus@Antonio: ~/Implementação-6-Deadlock/testesmarcus@Antonio:~/Implementação-6-Deadlock/testes$ { echo "=== CENARIO 1: exemplo do enunciado ==="; ./banker 10 5 7; echo "codigo de saida: $?"; cat result.txt; } >> ../evidencias.log 2>&1
+diff result.txt ../result_esperado.txt > /dev/null && echo "diff com result_esperado.txt: IGUAL" >> ../evidencias.log{ echo "=== CENARIO 1: exemplo do enunciado ==="; ./banker 10 5 7; echo "codigo de saida: $?"; cat result.txt; } >> ../evidencias.log 2>&1
+diff result.txt ../result_esperado.txt > /dev/null && echo "diff com result_esperado.txt: IGUAL" >> ../evidencias.log
+]0;marcus@Antonio: ~/Implementação-6-Deadlock/testesmarcus@Antonio:~/Implementação-6-Deadlock/testes$ printf 'RQ 3 2 1 1\nRL 3 5 0 0\n*\n' > commands.txprintf 'RQ 3 2 1 1\nRL 3 5 0 0\n*\n' > commands.txt
+]0;marcus@Antonio: ~/Implementação-6-Deadlock/testesmarcus@Antonio:~/Implementação-6-Deadlock/testes$ { echo "=== CENARIO 2: liberacao maior que a alocacao ==="; ./banker 10 5 7; echo "codigo de saida: $?"; cat result.txt; } >> ../evidencias.log 2>&1
+cat result.txt]0;marcus@Antonio: ~/Implementação-6-Deadlock/testesmarcus@Antonio:~/Implementação-6-Deadlock/testes$ { echo "=== CENARIO 2: liberacao maior que a alocacao ==="; ./banker 10 5 7; echo "codigo de saida: $?"; cat result.txt; } >> ../evidencias.log 2>&1
+cat result.txt
+Allocate to customer 3 the resources 2 1 1
+The customer 3 release 5 0 0 was denied because exceed its allocation
+MAXIMUM   |   ALLOCATION  |   NEED
+7 5 3     |   0 === CENARIO 3: 2 recursos e 3 clientes ===
+codigo de saida: 0
+Allocate to customer 0 the resources 1 1
+Allocate to customer 1 the resources 2 1
+Allocate to customer 2 the resources 4 1
+MAXIMUM   |   ALLOCATION  |   NEED
+5 3       |   1 1         |   4 2 
+2 2       |   2 1         |   0 1 
+4 1       |   4 1         |   0 0 
+AVAILABLE 1 1 
+The resources 1 1 are not enough to customer 0 request 4 2 
+=== ERRO 1: sem argumentos ===
+Uso: ./banker <recurso1> <recurso2> ...
+codigo de saida: 1
+ls: cannot access 'result.txt': No such file or directory
+=== ERRO 2: argumento nao numerico ===
+Argumento invalido: abc (esperado inteiro nao negativo)
+codigo de saida: 1
+ls: cannot access 'result.txt': No such file or directory
+0 0       |   7 5 3 
+3 2 2     |   0 0 0       |   3 2 2 
+9 0 2     |   0 0 0       |   9 0 2 
+2 2 2     |   2 1 1       |   0 1 1 
+4 3 3     |   0 0 0       |   4 3 3 
+AVAILABLE 8 4 6 
+]0;marcus@Antonio: ~/Implementação-6-Deadlock/testesmarcus@Antonio:~/Implementação-6-Deadlock/testes$ printf '5,3\n2,2\n4,1\n' > customer.txprintf '5,3\n2,2\n4,1\n' > customer.txt
+]0;marcus@Antonio: ~/Implementação-6-Deadlock/testesmarcus@Antonio:~/Implementação-6-Deadlock/testes$ printf 'RQ 0 1 1\nRQ 1 2 1\nRQ 2 4 1\n*\nRQ 0 4 2\n' > commands.txtprintf 'RQ 0 1 1\nRQ 1 2 1\nRQ 2 4 1\n*\nRQ 0 4 2\n' > commands.txt
+]0;marcus@Antonio: ~/Implementação-6-Deadlock/testesmarcus@Antonio:~/Implementação-6-Deadlock/testes$ { echo "=== CENARIO 3: 2 recursos e 3 clientes ==="; ./banker 8 4; echo "codigo de saida: $?"; cat result.txt; } >> ../evidencias.log 2>&1
+cat result.txt]0;marcus@Antonio: ~/Implementação-6-Deadlock/testesmarcus@Antonio:~/Implementação-6-Deadlock/testes$ { echo "=== CENARIO 3: 2 recursos e 3 clientes ==="; ./banker 8 4; echo "codigo de saida: $?"; cat result.txt; } >> ../evidencias.log 2>&1
+cat result.txt
+Allocate to customer 0 the resources 1 1
+Allocate to customer 1 the resources 2 1
+Allocate to customer 2 the resources 4 1
+MAXIMUM   |   ALLOCATION  |   NEED
+5 3       |   1 1         |   4 2 
+2 2       |   2 1         |   0 1 
+4 1       |   4 1         |   0 0 
+AVAILABLE 1 1 
+The resources 1 1 are not enough to customer 0 request 4 2 
+]0;marcus@Antonio: ~/Implementação-6-Deadlock/testesmarcus@Antonio:~/Implementação-6-Deadlock/testes$ cp ../customer.txt ../commands.txt cp ../customer.txt ../commands.txt .
+]0;marcus@Antonio: ~/Implementação-6-Deadlock/testesmarcus@Antonio:~/Implementação-6-Deadlock/testes$ rm -f result.txrm -f result.txt
+]0;marcus@Antonio: ~/Implementação-6-Deadlock/testesmarcus@Antonio:~/Implementação-6-Deadlock/testes$ { echo "=== ERRO 1: sem argumentos ==="; ./banker; echo "codigo de saida: $?"; ls result.txt; } >> ../evidencias.log 2>&1
+tail -4 ../evidencias.log]0;marcus@Antonio: ~/Implementação-6-Deadlock/testesmarcus@Antonio:~/Implementação-6-Deadlock/testes$ { echo "=== ERRO 1: sem argumentos ==="; ./banker; echo "codigo de saida: $?"; ls result.txt; } >> ../evidencias.log 2>&1
+tail -4 ../evidencias.log
+=== ERRO 1: sem argumentos ===
+Uso: ./banker <recurso1> <recurso2> ...
+codigo de saida: 1
+ls: cannot access 'result.txt': No such file or directory
+]0;marcus@Antonio: ~/Implementação-6-Deadlock/testesmarcus@Antonio:~/Implementação-6-Deadlock/testes$ rm -f result.txrm -f result.txt
+]0;marcus@Antonio: ~/Implementação-6-Deadlock/testesmarcus@Antonio:~/Implementação-6-Deadlock/testes$ { echo "=== ERRO 2: argumento nao numerico ==="; ./banker 10 abc 7; echo "codigo de saida: $?"; ls result.txt; } >> ../evidencias.log 2>&1
+tail -4 ../evidencias.log]0;marcus@Antonio: ~/Implementação-6-Deadlock/testesmarcus@Antonio:~/Implementação-6-Deadlock/testes$ { echo "=== ERRO 2: argumento nao numerico ==="; ./banker 10 abc 7; echo "codigo de saida: $?"; ls result.txt; } >> ../evidencias.log 2>&1
+tail -4 ../evidencias.log
+=== ERRO 2: argumento nao numerico ===
+=== ERRO 3: argumento negativo ===
+Argumento invalido: -5 (esperado inteiro nao negativo)
+codigo de saida: 1
+ls: cannot access 'result.txt': No such file or directory
+=== ERRO 4: menos argumentos que colunas ===
+Formato invalido no arquivo customer.txt (cliente 0)
+codigo de saida: 1
+ls: cannot access 'result.txt': No such file or directory
+=== ERRO 5: mais argumentos que colunas ===
+Formato invalido no arquivo customer.txt (cliente 0)
+codigo de saida: 1
+ls: cannot access 'result.txt': No such file or directory
+=== ERRO 6: customer.txt inexistente ===
+Nao foi possivel abrir customer.txt
+codigo de saida: 1
+ls: cannot access 'result.txt': No such file or directory
+=== ERRO 7: commands.txt inexistente ===
+Nao foi possivel abrir commands.txt
+codigo de saida: 1
+ls: cannot access 'result.txt': No such file or directory
+=== ERRO 8: customer.txt vazio ===
+O arquivo customer.txt esta vazio
+codigo de saida: 1
+ls: cannot access 'result.txt': No such file or directory
+=== ERRO 9: customer.txt com caractere invalido ===
+Formato invalido no arquivo customer.txt (cliente 1)
+codigo de saida: 1
+ls: cannot access 'result.txt': No such file or directory
+=== ERRO 10: comando desconhecido ===
+Formato invalido em commands.txt (linha 2)
+codigo de saida: 1
+ls: cannot access 'result.txt': No such file or directory
+=== ERRO 11: valores a menos no pedido ===
+Formato invalido em commands.txt (linha 1)
+codigo de saida: 1
+ls: cannot access 'result.txt': No such file or directory
+=== ERRO 12: valores a mais no pedido ===
+Formato invalido em commands.txt (linha 1)
+codigo de saida: 1
+ls: cannot access 'result.txt': No such file or directory
+=== ERRO 13: cliente inexistente ===
+Formato invalido em commands.txt (linha 1)
+codigo de saida: 1
+ls: cannot access 'result.txt': No such file or directory
+=== VALGRIND: exemplo do enunciado ===
+==3891== Memcheck, a memory error detector
+==3891== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==3891== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==3891== Command: ./banker 10 5 7
+==3891== 
+==3891== 
+==3891== HEAP SUMMARY:
+==3891==     in use at exit: 0 bytes in 0 blocks
+==3891==   total heap usage: 42 allocs, 42 frees, 18,820 bytes allocated
+==3891== 
+==3891== All heap blocks were freed -- no leaks are possible
+==3891== 
+==3891== For lists of detected and suppressed errors, rerun with: -s
+==3891== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+codigo de saida: 0
+=== ERRO 2 (refeito): argumento nao numerico ===
+Argumento invalido: abc (esperado inteiro nao negativo)
+codigo de saida: 1
+ls: cannot access 'result.txt': No such file or directory
+Script started on 2026-11-14 22:00:22-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="148" LINES="35"]
+[?2004h]0;marcus@Antonio: ~/Implementação-6-Deadlock[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock[00m$ [7m{ echo "=== VALGRIND: exemplo do enunciado ==="; valgrind --leak-check=full ./banker 10 5 7; echo "codigo[27m[7m [27m[7mde saida: $?"; } >> ../evidencias.log 2>&1 [27m
+[7mtail -12 ../evidencias.log[27m[A[A]0;marcus@Antonio: ~/Implementação-6-Deadlock[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock[00m$ { echo "=== VALGRIND: exemplo do enunciado ==="; valgrind --leak-check=full ./banker 10 5 7; echo "codigo de saida: $?"; } >> ../evidencias.log 2>&1
+tail -12 ../evidencias.log
+[?2004l==3891== Command: ./banker 10 5 7
+==3891== 
+==3891== 
+==3891== HEAP SUMMARY:
+==3891==     in use at exit: 0 bytes in 0 blocks
+==3891==   total heap usage: 42 allocs, 42 frees, 18,820 bytes allocated
+==3891== 
+==3891== All heap blocks were freed -- no leaks are possible
+==3891== 
+==3891== For lists of detected and suppressed errors, rerun with: -s
+==3891== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+codigo de saida: 0
+[?2004h]0;marcus@Antonio: ~/Implementação-6-Deadlock[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock[00m$ [7mwc -l ../evidencias.log[27m
+[7mhead -3 ../evidencias.log[27m[A]0;marcus@Antonio: ~/Implementação-6-Deadlock[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock[00m$ wc -l ../evidencias.log
+head -3 ../evidencias.log
+[?2004l16 ../evidencias.log
+=== VALGRIND: exemplo do enunciado ===
+==3891== Memcheck, a memory error detector
+==3891== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+[?2004h]0;marcus@Antonio: ~/Implementação-6-Deadlock[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock[00m$ [7mcat ../evidencias.log >> evidencias.log[27m
+[7mrm ../evidencias.log[27m
+[7mtail -5 evidencias.log[27m[A[A]0;marcus@Antonio: ~/Implementação-6-Deadlock[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock[00m$ cat ../evidencias.log >> evidencias.log
+rm ../evidencias.log
+tail -5 evidencias.log
+[?2004l==3891== All heap blocks were freed -- no leaks are possible
+==3891== 
+==3891== For lists of detected and suppressed errors, rerun with: -s
+==3891== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+codigo de saida: 0
+[?2004h]0;marcus@Antonio: ~/Implementação-6-Deadlock[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock[00m$ [7mls ../evidencias.log[27mls ../evidencias.log
+[?2004lls: cannot access '../evidencias.log': No such file or directory
+[?2004h]0;marcus@Antonio: ~/Implementação-6-Deadlock[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock[00m$ [7mcd testes[27mcd testes
+[?2004l[?2004h]0;marcus@Antonio: ~/Implementação-6-Deadlock/testes[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock/testes[00m$ [7mrm -f result.txt[27m
+[7m{ echo "=== ERRO 2 (refeito): argumento nao numerico ==="; ./banker 10 abc 7; echo "codigo de saida: $?"; ls result.txt; } >> ../evidencias.log 2>&1[27m 
+[7mtail -4 ../evidencias.log[27m[A[A[A]0;marcus@Antonio: ~/Implementação-6-Deadlock/testes[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock/testes[00m$ rm -f result.txt
+{ echo "=== ERRO 2 (refeito): argumento nao numerico ==="; ./banker 10 abc 7; echo "codigo de saida: $?"; ls result.txt; } >> ../evidencias.log 2>&1 
+tail -4 ../evidencias.log
+[?2004l=== ERRO 2 (refeito): argumento nao numerico ===
+Argumento invalido: abc (esperado inteiro nao negativo)
+codigo de saida: 1
+ls: cannot access 'result.txt': No such file or directory
+[?2004h]0;marcus@Antonio: ~/Implementação-6-Deadlock/testes[01;32mmarcus@Antonio[00m:[01;34m~/Implementação-6-Deadlock/testes[00m$ exit
+[?2004lexit
+
+Script done on 2026-11-14 22:03:55-03:00 [COMMAND_EXIT_CODE="0"]
