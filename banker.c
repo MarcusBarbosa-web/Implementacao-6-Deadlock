@@ -88,7 +88,7 @@ int ler_txt_customer(info *dados){
         for(j = 0; j < dados->n_recursos; j++){
             valor = strtol(atual, &fim, 10);
 
-            if(fim == atual || valor < 0){
+            if(fim == atual || valor < 0 || valor > INT_MAX){
                 goto formato_invalido;
             }
             dados->maximum[i][j] = (int)valor;
@@ -167,7 +167,7 @@ int ler_txt_commands(info *dados){
             for(j = 0; j < dados->n_recursos; j++){
                 valor = strtol(atual, &fim, 10);
 
-                if(fim == atual || valor < 0){
+                if(fim == atual || valor < 0 || valor > INT_MAX){
                     goto invalido;
                 }
                 atual = fim;
